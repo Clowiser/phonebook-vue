@@ -1,6 +1,8 @@
 <template>
   <h1>Annuaire</h1>
   <h2>Retrouvez votre correspondant !</h2>
+
+  <SearchBar v-bind="users" />
 <hr>
 
 <div class="containercard">
@@ -16,14 +18,16 @@
 </template>
 
 <script >
-import Card from './Card.vue';
+import CardList from './CardList.vue';
 import axios from 'axios';
+import SearchBar from './SearchBar.vue';
 
 export default {
  name: "Index",
  components: {
-  Card
- },
+    Card: CardList,
+    SearchBar
+},
 
 data(){
   return {
@@ -40,5 +44,4 @@ mounted(){
 }
 
 }
-
 </script>
